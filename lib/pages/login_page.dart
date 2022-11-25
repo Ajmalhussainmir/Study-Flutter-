@@ -7,51 +7,76 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var textTheme;
     return Scaffold(
-        body: Center(
-      child: Container(
-        // decoration: BoxDecoration(border: Border.all(color: Colors.green)),
-        child: Column(
-          children: <Widget>[
-            Image.asset(
-              "images/login_secure.png",
-              fit: BoxFit.cover,
-            ),
-            Padding(padding: EdgeInsets.all(15)),
-            Text("MoneyMaster"),
-            Padding(padding: EdgeInsets.all(8)),
-            Padding(
-              padding: EdgeInsets.all(15),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'User Name',
-                  hintText: 'Enter Your Name',
+        appBar: AppBar(
+            leading: BackButton(),
+            title: Center(
+              child: Text(
+                "Login",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            )),
+        body: SingleChildScrollView(
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.all(20),
+              child: Container(
+                decoration:
+                    BoxDecoration(border: Border.all(color: Colors.grey)),
+                height: 500, width: 400,
+                // decoration: BoxDecoration(border: Border.all(color: Colors.green)),
+                child: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Image.asset(
+                      "images/login_secure.png",
+                      fit: BoxFit.cover,
+                    ),
+                    Padding(padding: EdgeInsets.all(1)),
+                    Text("MoneyMaster"),
+                    Padding(padding: EdgeInsets.all(5)),
+                    Padding(
+                      padding: EdgeInsets.all(5),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          labelText: 'Username',
+                          hintText: 'Enter Username',
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(5),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                            border: const OutlineInputBorder(),
+                            filled: true,
+                            labelText: "Password",
+                            hintText: "Password"),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Container(
+                      child: MaterialButton(
+                        color: Colors.blue,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Text(
+                          "Login",
+                        ),
+                        onPressed: () {
+                          print("Hellow World");
+                        },
+                      ),
+                    )
+                  ],
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(15),
-              child: TextFormField(
-                decoration: InputDecoration(
-                    border: const OutlineInputBorder(),
-                    filled: true,
-                    labelText: "Password",
-                    hintText: "Password"),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-              child: Text("Login"),
-              style: TextButton.styleFrom(),
-              onPressed: () {
-                print("Hellow World");
-              },
-            )
-          ],
-        ),
-      ),
-    ));
+          ),
+        ));
   }
 }

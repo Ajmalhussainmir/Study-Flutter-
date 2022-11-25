@@ -38,6 +38,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   english_words: ^4.0.0
   getwidget: ^2.0.4
+  font_awesome_flutter: ^10.2.1
+
 
 
 dev_dependencies:
